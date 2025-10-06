@@ -1,0 +1,232 @@
+/* Community Section Styles */
+.community {
+  padding: 8rem 0;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.community::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.community-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.community-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.community-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.community-title-highlight {
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.community-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Content */
+.community-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.community-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.community-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.community-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.community-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Stats */
+.community-stats {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .community {
+    padding: 6rem 0;
+  }
+
+  .community-header {
+    margin-bottom: 4rem;
+  }
+
+  .community-content {
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .community {
+    padding: 5rem 0;
+  }
+
+  .community-container {
+    padding: 0 1.5rem;
+  }
+
+  .community-header {
+    margin-bottom: 3rem;
+  }
+
+  .community-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .community-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .community-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .community-visual {
+    order: -1;
+  }
+
+  .community-img {
+    max-width: 300px;
+  }
+
+  .community-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .community-stats {
+    justify-content: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .community {
+    padding: 4rem 0;
+  }
+
+  .community-container {
+    padding: 0 1rem;
+  }
+
+  .community-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .community-content {
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .community-img {
+    max-width: 280px;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+  }
+
+  .community-stats {
+    justify-content: center;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}
+
+/* Scroll animations are now handled via .reveal classes in scroll-animations.css */

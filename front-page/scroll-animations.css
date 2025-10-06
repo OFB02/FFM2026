@@ -1,0 +1,48 @@
+/* Global scroll reveal animations */
+
+:root {
+  --reveal-distance: 28px;
+  --reveal-duration: 700ms;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Base state */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition: opacity var(--reveal-duration) var(--reveal-ease),
+              transform var(--reveal-duration) var(--reveal-ease);
+  will-change: opacity, transform;
+}
+
+/* Visible state */
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Direction variants via data attribute */
+.reveal[data-reveal="up"] { transform: translateY(var(--reveal-distance)); }
+.reveal[data-reveal="down"] { transform: translateY(calc(var(--reveal-distance) * -1)); }
+.reveal[data-reveal="left"] { transform: translateX(var(--reveal-distance)); }
+.reveal[data-reveal="right"] { transform: translateX(calc(var(--reveal-distance) * -1)); }
+.reveal[data-reveal="fade"] { transform: none; }
+.reveal[data-reveal="zoom"] { transform: scale(0.96); }
+
+/* Per-element delay support with CSS var */
+.reveal { transition-delay: var(--reveal-delay, 0ms); }
+
+/* Stagger helper: assign delay to children */
+.reveal--stagger > .reveal-item { transition-delay: var(--reveal-child-delay, 0ms); }
+.reveal--stagger.is-visible > .reveal-item { opacity: 1; transform: none; }
+
+/* Reduced motion: show content without motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible,
+  .reveal--stagger > .reveal-item {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

@@ -1,0 +1,397 @@
+/* Hero Section Styles - Minimalistic */
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100dvh; /* modern viewport unit for mobile browsers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Animated Gradient Background (no video) */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* Static base gradient to minimize paints */
+  background: linear-gradient(180deg, #0a0a0a 0%, #121212 50%, #0a0a0a 100%);
+  filter: saturate(108%);
+  pointer-events: none;
+  will-change: transform;
+  contain: layout paint style;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Canvas particle layer */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* sits between bg and content */
+  pointer-events: none;
+  contain: strict;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-bg::before,
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  opacity: 0.45;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 35%, transparent 70%);
+  will-change: transform;
+  animation: drift 24s ease-in-out infinite alternate;
+}
+
+.hero-bg::after {
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.025) 30%, transparent 70%);
+  animation: driftAlt 32s ease-in-out infinite alternate;
+  animation-delay: 0.6s;
+}
+
+@keyframes drift {
+  0%   { transform: translate3d(-12vw, -8vh, 0) scale(1.0); }
+  100% { transform: translate3d(8vw, 10vh, 0) scale(1.03); }
+}
+
+@keyframes driftAlt {
+  0%   { transform: translate3d(14vw, -10vh, 0) scale(1.0); }
+  100% { transform: translate3d(-10vw, 12vh, 0) scale(1.04); }
+}
+
+/* Container */
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-title-highlight {
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 500px;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Actions */
+.hero-actions {
+  margin-top: 1rem;
+}
+
+.btn-hero-primary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 2px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+}
+
+.btn-hero-primary:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Scroll Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+.scroll-text {
+  font-weight: 300;
+}
+
+.scroll-arrow {
+  font-size: 1.2rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+  60% { transform: translateY(-3px); }
+}
+
+/* Fallback background for when video doesn't load */
+/* Subtle diagonal gradient as base (covered by hero-bg layers) */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0b0b0b 0%, #171717 100%);
+  z-index: -2;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 1024px) {
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    line-height: 1.05;
+  }
+  
+  .hero-description {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 100dvh;
+    min-height: 650px;
+    padding-top: calc(70px + env(safe-area-inset-top, 0px));
+  }
+
+  .hero-container {
+    padding: 0 1.5rem;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .hero-content {
+    gap: 1.8rem;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 9vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    margin-top: 1.5rem;
+  }
+
+  .btn-hero-primary {
+    padding: 1.1rem 2.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    width: auto;
+    min-width: 200px;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* Background focus on tablets */
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 100dvh;
+    min-height: 600px;
+    padding-top: calc(60px + env(safe-area-inset-top, 0px));
+  }
+
+  .hero-container {
+    padding: 0 1.2rem;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 10vw, 2.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.45;
+    max-width: 95%;
+  }
+
+  .hero-actions {
+    margin-top: 1.2rem;
+    width: 100%;
+  }
+
+  .btn-hero-primary {
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 1rem;
+    font-size: 0.7rem;
+  }
+
+  .scroll-arrow {
+    font-size: 1rem;
+  }
+
+  /* Mobile background tweak */
+  .hero-bg::before,
+  .hero-bg::after {
+  animation-duration: 22s;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .hero-container {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 11vw, 2.4rem);
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .btn-hero-primary {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.75rem;
+    max-width: 260px;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    height: 100vh;
+    min-height: 500px;
+  }
+
+  .hero-container {
+    padding: 0 2rem;
+  }
+
+  .hero-content {
+    gap: 1.2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 0.8rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn-hero-primary {
+    padding: 1.2rem 2.5rem;
+    font-size: 0.9rem;
+    min-height: 48px; /* Better touch target */
+  }
+
+  .hero-scroll-indicator {
+    display: none; /* Hide on touch devices since they can't hover */
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg::before,
+  .hero-bg::after,
+  .hero-scroll-indicator {
+    animation: none !important;
+    transform: none !important;
+  }
+  .hero-bg {
+    animation: none !important;
+  }
+  .hero-canvas {
+    mix-blend-mode: normal; /* keep static rendering clean */
+  }
+}
+
+/* Position starting points for blobs */
+.hero-bg::before { top: -10vmax; left: -10vmax; }
+.hero-bg::after  { bottom: -12vmax; right: -10vmax; }
