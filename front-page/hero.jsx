@@ -229,12 +229,12 @@ const Hero = () => {
         <div className="hero-container reveal" data-reveal="up">
           <div className="hero-content">
             <h1 className="hero-title reveal" data-reveal="up" style={{ "--reveal-delay": '80ms' }}>
-              The Future of
-              <span className="hero-title-highlight"> Exclusive Networking</span>
+              Where Ambition
+              <span className="hero-title-highlight"> Meets Community</span>
             </h1>
 
             <p className="hero-description reveal" data-reveal="up" style={{ "--reveal-delay": '180ms' }}>
-              A private community where ambitious, young and exceptional connect.
+              Join young professionals aged 20-26 who push each other to achieve more, together.
             </p>
 
             {/* Mobile-only logo between description and Apply */}

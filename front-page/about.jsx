@@ -21,10 +21,10 @@ const About = () => {
           <div className="about-mobile-stack">
             {/* Hero Card */}
             <div className="about-hero-card-mobile reveal is-visible" data-reveal="up">
-              <div className="about-badge-mobile">Our Foundation</div>
-              <h2 className="about-title-mobile">The 1885 Philosophy</h2>
+              <div className="about-badge-mobile">Who We Are</div>
+              <h2 className="about-title-mobile">about <span className="about-title-highlight">1855</span></h2>
               <p className="about-subtitle-mobile">
-                Excellence meets purpose in our non-profit community
+                A non-profit community built by members, for members
               </p>
             </div>
 
@@ -32,8 +32,8 @@ const About = () => {
             <div className="about-image-card-mobile reveal is-visible" data-reveal="up" style={{ "--reveal-delay": '120ms' }}>
               <div className="about-image-frame-mobile">
                 <img 
-                  src="/pics/Dinner.jpeg" 
-                  alt="1885 Club exclusive dinner experience" 
+                    src="/pics/Dinner.jpeg" 
+                    alt="1855 club exclusive dinner experience" 
                   className="about-img-mobile" 
                   loading="lazy"
                   decoding="async"
@@ -48,9 +48,9 @@ const About = () => {
               <div className="about-info-card-mobile reveal is-visible" data-reveal="left" style={{ "--reveal-delay": '200ms' }}>
                 <div className="card-top-accent"></div>
                 <span className="about-card-number-mobile">01</span>
-                <h3 className="about-card-title-mobile">Challenge & Elevate</h3>
+                <h3 className="about-card-title-mobile">Real Connections</h3>
                 <p className="about-text-mobile">
-                  Ambitious young professionals aged 20-26 pushing each other to new heights. Our diverse community of men and women creates a dynamic environment for growth.
+                  We're young professionals aged 20-26 who genuinely want to see each other succeed. Our diverse community creates a space where you can be yourself while growing together.
                 </p>
               </div>
 
@@ -59,25 +59,25 @@ const About = () => {
                 <span className="about-card-number-mobile">02</span>
                 <h3 className="about-card-title-mobile">100% Non-Profit</h3>
                 <p className="about-text-mobile">
-                  Every dollar from memberships flows back into creating unforgettable experiences and opportunities for our members. Complete transparency, zero profit motive.
+                  Every membership fee goes directly into creating great experiences for our members. No one profits—we're in this together to build something meaningful.
                 </p>
               </div>
 
               <div className="about-info-card-mobile reveal is-visible" data-reveal="left" style={{ "--reveal-delay": '360ms' }}>
                 <div className="card-top-accent"></div>
                 <span className="about-card-number-mobile">03</span>
-                <h3 className="about-card-title-mobile">Learn & Grow</h3>
+                <h3 className="about-card-title-mobile">Learn Together</h3>
                 <p className="about-text-mobile">
-                  Exclusive access to presentations from industry professionals and experts. We curate knowledge-sharing designed to elevate every member's potential.
+                  Get access to talks and sessions with people who've been where you want to go. We bring in real professionals to share honest insights, not just motivational speeches.
                 </p>
               </div>
 
               <div className="about-info-card-mobile reveal is-visible" data-reveal="right" style={{ "--reveal-delay": '440ms' }}>
                 <div className="card-top-accent"></div>
                 <span className="about-card-number-mobile">04</span>
-                <h3 className="about-card-title-mobile">Active Engagement</h3>
+                <h3 className="about-card-title-mobile">Stay Engaged</h3>
                 <p className="about-text-mobile">
-                  Members attend at least one of our two annual flagship events, ensuring everyone contributes to our vibrant, engaged community.
+                  Members join at least one of our two annual trips. This simple commitment keeps our community active and ensures everyone stays connected.
                 </p>
               </div>
             </div>
@@ -86,13 +86,12 @@ const About = () => {
           // Desktop Layout
           <>
             <div className="about-header reveal" data-reveal="up">
-              <div className="about-badge-desktop">Our Foundation</div>
+              <div className="about-badge-desktop">Who We Are</div>
               <h2 className="about-title">
-                The 1885
-                <span className="about-title-highlight"> Philosophy</span>
+                About <span className="about-title-highlight">1855 club</span>
               </h2>
               <p className="about-subtitle">
-                Where excellence meets purpose in a non-profit community dedicated to elevation
+                A non-profit community built by members, for members
               </p>
             </div>
 
@@ -102,7 +101,7 @@ const About = () => {
                   <div className="about-img-frame">
                     <img 
                       src="/pics/Dinner.jpeg" 
-                      alt="1885 Club exclusive dinner experience" 
+                        alt="1855 club exclusive dinner experience" 
                       className="about-img" 
                       loading="lazy"
                       decoding="async"
@@ -118,11 +117,11 @@ const About = () => {
               <div className="about-description reveal" data-reveal="right" style={{ "--reveal-delay": '200ms' }}>
                 <div className="about-text-block">
                   <div className="about-block-number">01</div>
-                  <h3 className="about-section-title">Challenge & Elevate</h3>
+                  <h3 className="about-section-title">Real Connections</h3>
                   <p className="about-text">
-                    1885 club exists for ambitious young professionals aged 20-26 who seek to be challenged 
-                    and elevated by each other. Our diverse community of men and women creates a dynamic 
-                    environment where excellence is the standard and meaningful connection is the foundation.
+                    1855 club is for young professionals aged 20-26 who want to be surrounded by people 
+                    who challenge them to grow. Our diverse community creates an environment where you can 
+                    be yourself, share honest conversations, and build genuine friendships that push you forward.
                   </p>
                 </div>
 
@@ -132,9 +131,9 @@ const About = () => {
                   <div className="about-block-number">02</div>
                   <h3 className="about-section-title">100% Member-Focused</h3>
                   <p className="about-text">
-                    We operate as a non-profit organization with unwavering transparency. Every single dollar 
-                    from membership fees flows directly back into the network—creating extraordinary experiences, 
-                    world-class events, and opportunities that genuinely enrich our members' lives.
+                    We're a non-profit organization with complete transparency. Every dollar from membership 
+                    fees goes straight back into creating great experiences and opportunities for our members. 
+                    No one profits—this is about building something meaningful together.
                   </p>
                 </div>
 
@@ -142,11 +141,11 @@ const About = () => {
 
                 <div className="about-text-block">
                   <div className="about-block-number">03</div>
-                  <h3 className="about-section-title">Learn & Grow Together</h3>
+                  <h3 className="about-section-title">Learn Together</h3>
                   <p className="about-text">
-                    Beyond social connection, we curate exclusive presentations and intimate sessions with 
-                    industry professionals and subject matter experts. Our mission is to continuously elevate 
-                    every member's knowledge, expand perspectives, and unlock potential.
+                    We bring in industry professionals and experts to share real insights from their experiences. 
+                    These aren't just networking talks—they're honest conversations about what actually works, 
+                    designed to help every member learn and grow.
                   </p>
                 </div>
 
@@ -154,11 +153,11 @@ const About = () => {
 
                 <div className="about-text-block">
                   <div className="about-block-number">04</div>
-                  <h3 className="about-section-title">Commitment to Excellence</h3>
+                  <h3 className="about-section-title">Stay Engaged</h3>
                   <p className="about-text">
-                    Membership requires attending at least one of our two annual flagship events. 
-                    This commitment ensures an active, engaged community where everyone contributes 
-                    meaningfully to the collective experience and upholds our standard of excellence.
+                    Members join at least one of our two annual trips. This simple commitment keeps our 
+                    community active and connected, ensuring everyone contributes to making 1855 club 
+                    a place where real relationships are built.
                   </p>
                 </div>
               </div>

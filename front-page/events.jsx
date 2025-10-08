@@ -21,8 +21,8 @@ const Events = () => {
           <div className="events-mobile-stack">
             {/* Hero Card */}
             <div className="event-hero-mobile reveal is-visible" data-reveal="up">
-              <div className="event-badge-mobile">Next Event</div>
-              <h2 className="event-title-mobile">Kitzbühel Retreat</h2>
+              <div className="event-badge-mobile">Next The Alps</div>
+              <h2 className="event-title-mobile">Kitzbühel Trip</h2>
               <p className="event-subtitle-mobile">Winter 2025 • 4 Days / 3 Nights</p>
             </div>
 
@@ -89,26 +89,25 @@ const Events = () => {
           <>
             <div className="events-header reveal" data-reveal="up">
               <h2 className="events-title">
-                Our Next
-                <span className="events-title-highlight"> Adventure</span>
+                Join Us In
+                <span className="events-title-highlight"> The Alps</span>
               </h2>
               <p className="events-subtitle">
-                Join us for an unforgettable journey to the Austrian Alps
+                Our next trip to the Austrian Alps this winter
               </p>
             </div>
 
             <div className="event-content">
               <div className="event-info reveal" data-reveal="left" style={{ "--reveal-delay": '120ms' }}>
                 <div className="event-badge">
-                  <span className="badge-text">Upcoming Event</span>
+                  <span className="badge-text">Next Trip</span>
                 </div>
-                <h3 className="event-name">Kitzbühel Alpine Retreat</h3>
+                <h3 className="event-name">Kitzbühel Winter Trip</h3>
                 <p className="event-location">Kitzbühel, Austria</p>
                 <p className="event-description">
-                  Experience the legendary slopes of Kitzbühel, home to the most challenging 
-                  downhill race in alpine skiing. Our exclusive retreat combines world-class 
-                  skiing with luxury accommodations and networking opportunities in one of 
-                  Austria's most prestigious mountain destinations.
+                  Join us for skiing on Kitzbühel's legendary slopes, great food, and genuine connections 
+                  in the Austrian Alps. This is where our community comes together—no pressure, just good people, 
+                  amazing scenery, and the kind of experiences that turn acquaintances into real friends.
                 </p>
                 <div className="event-details">
                   <div className="detail-item">

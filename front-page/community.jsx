@@ -34,12 +34,12 @@ const Community = () => {
           <div className="community-mobile-stack">
             {/* Hero Card */}
             <div className="community-hero-card-mobile reveal is-visible" data-reveal="up">
-              <div className="community-badge-mobile">Exclusive Network</div>
+              <div className="community-badge-mobile">Our Community</div>
               <h2 className="community-title-mobile">
-                Elite Community
+                More Than Networking
               </h2>
               <p className="community-subtitle-mobile">
-                Where visionary minds unite to create extraordinary futures
+                Where ambitious young professionals connect, grow, and create memories together
               </p>
             </div>
 
@@ -54,9 +54,9 @@ const Community = () => {
                 draggable="false"
               />
               <div className="community-image-overlay-mobile">
-                <h3 className="community-overlay-title-mobile">Luxury Experiences</h3>
+                <h3 className="community-overlay-title-mobile">Unique Experiences</h3>
                 <p className="community-overlay-text-mobile">
-                  From exclusive venues to private events
+                  From great venues to unforgettable moments
                 </p>
               </div>
             </div>
@@ -65,17 +65,17 @@ const Community = () => {
             <div className="community-cards-grid-mobile">
               <div className="community-info-card-mobile reveal is-visible" data-reveal="left" style={{ "--reveal-delay": '200ms' }}>
                 <span className="community-card-number-mobile">01</span>
-                <h3 className="community-card-title-mobile">Curated Excellence</h3>
+                <h3 className="community-card-title-mobile">Driven People</h3>
                 <p className="community-text-mobile">
-                  1885 club brings together ambitious visionaries aged 20-26 who refuse to settle for ordinary. We're a movement of excellence.
+                  1855 club brings together ambitious young professionals aged 20-26 who want more from life and believe in supporting each other to get there.
                 </p>
               </div>
 
               <div className="community-info-card-mobile reveal is-visible" data-reveal="right" style={{ "--reveal-delay": '280ms' }}>
                 <span className="community-card-number-mobile">02</span>
-                <h3 className="community-card-title-mobile">Beyond Networking</h3>
+                <h3 className="community-card-title-mobile">Real Friendships</h3>
                 <p className="community-text-mobile">
-                  We don't just connect—we elevate. Our members travel together, celebrate together, and push boundaries in every aspect of life.
+                  We travel together, celebrate together, and build genuine relationships. This isn't just about business cards—it's about creating lasting friendships.
                 </p>
               </div>
             </div>
@@ -95,27 +95,27 @@ const Community = () => {
           <>
             <div className="community-header reveal" data-reveal="up">
               <h2 className="community-title">
-                A Network Beyond
-                <span className="community-title-highlight"> Ordinary</span>
+                More Than
+                <span className="community-title-highlight"> Networking</span>
               </h2>
               <p className="community-subtitle">
-                Where ambitious young minds connect, elevate, and create extraordinary experiences together
+                Where ambitious young professionals connect, grow, and create unforgettable experiences together
               </p>
             </div>
 
             <div className="community-content">
               <div className="community-description reveal" data-reveal="left" style={{ "--reveal-delay": '120ms' }}>
                 <p className="community-text">
-                  1885 club is an exclusive community for ambitious individuals aged 20-26 
-                  who are driven to achieve extraordinary things. We are a carefully curated ecosystem 
-                  of like-minded young visionaries who come together to socialize, challenge 
-                  each other, and elevate our standards.
+                  1855 club is a community for ambitious young professionals aged 20-26 
+                  who want to be surrounded by people who push them to grow. We're a group 
+                  of driven individuals who believe that the right community can make all the difference 
+                  in where you go in life.
                 </p>
                 <p className="community-text">
-                  At 1885 club, we don't just gather—we build. Our culture extends beyond business, 
-                  encouraging members to live life to the fullest extent. Together, we forge 
-                  meaningful partnerships, turn ambition into action, and create extraordinary 
-                  experiences that define our generation.
+                  We're not just about business connections—though those naturally happen. 
+                  We're about building real friendships with people who challenge you, celebrate with you, 
+                  and create memories that last. Together, we travel, learn, and support each other 
+                  in becoming the best versions of ourselves.
                 </p>
               </div>
 

@@ -70,9 +70,9 @@ const ApplyModal = ({ isOpen, onClose }) => {
         </button>
         
         <div className="modal-header">
-          <h2 className="modal-title">Request Invitation</h2>
+          <h2 className="modal-title">Apply to Join</h2>
           <p className="modal-subtitle">
-            Join an exclusive community of visionaries and leaders
+            Join a community of ambitious young professionals who support each other's growth
           </p>
         </div>
 
@@ -148,7 +148,7 @@ const ApplyModal = ({ isOpen, onClose }) => {
               name="motivation"
               value={formData.motivation}
               onChange={handleInputChange}
-              placeholder="Tell us about your goals and what you hope to contribute to the community..."
+              placeholder="Tell us about yourself, what you're working on, and what you're looking for in a community..."
               rows="4"
               required
             />

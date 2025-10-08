@@ -64,7 +64,7 @@ const Footer = ({ onContactClick }) => {
         
   <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2025 1855 club. Invitation only.
+            © 2025 1855 club. Membership by application.
           </p>
         </div>
       </div>
