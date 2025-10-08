@@ -30,7 +30,7 @@ const Community = () => {
     <section id="community" className="community">
       <div className="community-container">
         {isPhone ? (
-          /* Completely New Mobile Stack Layout */
+          /* Mobile Stack Layout */
           <div className="community-mobile-stack">
             {/* Hero Card */}
             <div className="community-hero-card-mobile reveal is-visible" data-reveal="up">
@@ -43,20 +43,14 @@ const Community = () => {
               </p>
             </div>
 
-            {/* Image Card with Overlay */}
-            <div className="community-image-card-mobile reveal is-visible" data-reveal="up" style={{ "--reveal-delay": '120ms' }}>
-              <img 
-                src="/pics/meilleur-restaurant-courchevel-1850.png" 
-                alt="FFM Network Community" 
-                className="community-img-mobile" 
-                loading="lazy"
-                decoding="async"
-                draggable="false"
-              />
-              <div className="community-image-overlay-mobile">
-                <h3 className="community-overlay-title-mobile">Unique Experiences</h3>
-                <p className="community-overlay-text-mobile">
-                  From great venues to unforgettable moments
+            {/* Visual Feature Card - No Image */}
+            <div className="community-feature-card-mobile reveal is-visible" data-reveal="up" style={{ "--reveal-delay": '120ms' }}>
+              <div className="feature-gradient-bg"></div>
+              <div className="feature-content">
+                <div className="feature-icon">✦</div>
+                <h3 className="feature-title">Shared Experiences</h3>
+                <p className="feature-text">
+                  Meaningful moments that bring people together
                 </p>
               </div>
             </div>
@@ -91,7 +85,7 @@ const Community = () => {
             </div>
           </div>
         ) : (
-          /* Desktop Layout - Unchanged */
+          /* Desktop Layout */
           <>
             <div className="community-header reveal" data-reveal="up">
               <h2 className="community-title">
@@ -105,30 +99,42 @@ const Community = () => {
 
             <div className="community-content">
               <div className="community-description reveal" data-reveal="left" style={{ "--reveal-delay": '120ms' }}>
-                <p className="community-text">
-                  1855 club is a community for ambitious young professionals aged 20-26 
-                  who want to be surrounded by people who push them to grow. We're a group 
-                  of driven individuals who believe that the right community can make all the difference 
-                  in where you go in life.
-                </p>
-                <p className="community-text">
-                  We're not just about business connections—though those naturally happen. 
-                  We're about building real friendships with people who challenge you, celebrate with you, 
-                  and create memories that last. Together, we travel, learn, and support each other 
-                  in becoming the best versions of ourselves.
-                </p>
+                <div className="community-value-card">
+                  <p className="community-text">
+                    1855 club is a community for ambitious young professionals aged 20-26 
+                    who want to be surrounded by people who push them to grow. We're a group 
+                    of driven individuals who believe that the right community can make all the difference 
+                    in where you go in life.
+                  </p>
+                  <p className="community-text">
+                    We're not just about business connections—though those naturally happen. 
+                    We're about building real friendships with people who challenge you, celebrate with you, 
+                    and create memories that last. Together, we travel, learn, and support each other 
+                    in becoming the best versions of ourselves.
+                  </p>
+                </div>
               </div>
 
               <div className="community-visual reveal" data-reveal="right" style={{ "--reveal-delay": '200ms' }}>
-                <img 
-                  src="/pics/meilleur-restaurant-courchevel-1850.png" 
-                  alt="FFM Network Community" 
-                  className="community-img" 
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 90vw, 400px"
-                  draggable="false"
-                />
+                <div className="community-visual-box">
+                  <div className="visual-gradient"></div>
+                  <div className="visual-content">
+                    <div className="visual-icon">✦</div>
+                    <h3 className="visual-heading">Shared Experiences</h3>
+                    <p className="visual-subtext">Meaningful connections and memories</p>
+                    <div className="visual-stats-mini">
+                      <div className="mini-stat">
+                        <span className="mini-number">20-26</span>
+                        <span className="mini-label">Age Range</span>
+                      </div>
+                      <div className="mini-divider"></div>
+                      <div className="mini-stat">
+                        <span className="mini-number">2</span>
+                        <span className="mini-label">Annual Trips</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
