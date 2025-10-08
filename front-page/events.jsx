@@ -106,7 +106,7 @@ const Events = () => {
                 <p className="event-location">Kitzbühel, Austria</p>
                 <p className="event-description">
                   Join us for skiing on Kitzbühel's legendary slopes, great food, and genuine connections 
-                  in the Austrian Alps. This is where our community comes together—no pressure, just good people, 
+                  in the Austrian Alps. This is where our community comes together. No pressure, just good people, 
                   amazing scenery, and the kind of experiences that turn acquaintances into real friends.
                 </p>
                 <div className="event-details">

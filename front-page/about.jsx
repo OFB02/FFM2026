@@ -59,7 +59,7 @@ const About = () => {
                 <span className="about-card-number-mobile">02</span>
                 <h3 className="about-card-title-mobile">100% Non-Profit</h3>
                 <p className="about-text-mobile">
-                  Every membership fee goes directly into creating great experiences for our members. No one profits—we're in this together to build something meaningful.
+                  Every membership fee goes directly into creating great experiences for our members. No one profits. We're in this together to build something meaningful.
                 </p>
               </div>
 
@@ -133,7 +133,7 @@ const About = () => {
                   <p className="about-text">
                     We're a non-profit organization with complete transparency. Every dollar from membership 
                     fees goes straight back into creating great experiences and opportunities for our members. 
-                    No one profits—this is about building something meaningful together.
+                    No one profits. This is about building something meaningful together.
                   </p>
                 </div>
 
@@ -144,7 +144,7 @@ const About = () => {
                   <h3 className="about-section-title">Learn Together</h3>
                   <p className="about-text">
                     We bring in industry professionals and experts to share real insights from their experiences. 
-                    These aren't just networking talks—they're honest conversations about what actually works, 
+                    These aren't just networking talks. They're honest conversations about what actually works, 
                     designed to help every member learn and grow.
                   </p>
                 </div>

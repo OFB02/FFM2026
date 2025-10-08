@@ -69,7 +69,7 @@ const Community = () => {
                 <span className="community-card-number-mobile">02</span>
                 <h3 className="community-card-title-mobile">Real Friendships</h3>
                 <p className="community-text-mobile">
-                  We travel together, celebrate together, and build genuine relationships. This isn't just about business cards—it's about creating lasting friendships.
+                  We travel together, celebrate together, and build genuine relationships. This isn't just about business cards, it's about creating lasting friendships.
                 </p>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Community = () => {
                     in where you go in life.
                   </p>
                   <p className="community-text">
-                    We're not just about business connections—though those naturally happen. 
+                    We're not just about business connections, though those naturally happen. 
                     We're about building real friendships with people who challenge you, celebrate with you, 
                     and create memories that last. Together, we travel, learn, and support each other 
                     in becoming the best versions of ourselves.
