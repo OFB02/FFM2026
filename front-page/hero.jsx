@@ -1,9 +1,45 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './hero.css';
+import './mobile-scroll-enhancements.css';
 import ApplyModal from './ApplyModal.jsx';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Enhanced mobile scroll experience
+  useEffect(() => {
+    // Only add scroll enhancements on mobile
+    const isMobile = window.matchMedia('(max-width: 480px)').matches;
+    if (!isMobile) return;
+
+    const updateScrollProgress = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.documentElement.style.setProperty('--scroll-progress', `${scrollPercent}%`);
+    };
+
+    const optimizedScrollHandler = () => {
+      requestAnimationFrame(updateScrollProgress);
+    };
+
+    window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+    
+    // Stable viewport height (for CSS var --vh)
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    window.addEventListener('orientationchange', setVh);
+
+    return () => {
+      window.removeEventListener('scroll', optimizedScrollHandler);
+      window.removeEventListener('resize', setVh);
+      window.removeEventListener('orientationchange', setVh);
+    };
+  }, []);
 
   // Canvas background (impressive but lightweight)
   const CanvasBackground = () => {
@@ -171,6 +207,17 @@ const Hero = () => {
     setIsModalOpen(false);
   };
 
+  // Enhanced scroll to next section for mobile
+  const scrollToNext = () => {
+    const communitySection = document.getElementById('community');
+    if (communitySection) {
+      communitySection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <>
       <section className="hero">
@@ -187,8 +234,20 @@ const Hero = () => {
             </h1>
 
             <p className="hero-description reveal" data-reveal="up" style={{ "--reveal-delay": '180ms' }}>
-              A private community where extraordinary young and ambitious converge.
+              A private community where ambitious, young and exceptional connect.
             </p>
+
+            {/* Mobile-only logo between description and Apply */}
+            <img
+              className="hero-logo-mobile reveal"
+              data-reveal="up"
+              style={{ "--reveal-delay": '230ms' }}
+              src="/pics/FFM 2026 (4).png"
+              alt="FFM 2026 logo"
+              loading="lazy"
+              decoding="async"
+              draggable="false"
+            />
 
             <div className="hero-actions reveal" data-reveal="up" style={{ "--reveal-delay": '280ms' }}>
               <button className="btn-hero-primary" onClick={openModal}>
@@ -198,7 +257,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-scroll-indicator reveal" data-reveal="fade" style={{ "--reveal-delay": '500ms' }}>
+        <div className="hero-scroll-indicator reveal" data-reveal="fade" style={{ "--reveal-delay": '500ms' }} onClick={scrollToNext}>
           <span className="scroll-text">Scroll</span>
           <div className="scroll-arrow">↓</div>
         </div>

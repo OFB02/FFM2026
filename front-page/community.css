@@ -4,6 +4,9 @@
   background: #000000;
   position: relative;
   overflow: hidden;
+  /* Improve scroll performance */
+  scroll-margin-top: 80px;
+  contain: layout style paint;
 }
 
 .community::before {
@@ -94,6 +97,8 @@
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
   font-weight: 300;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
 }
 
 /* Stats */
@@ -145,11 +150,11 @@
 
 @media (max-width: 768px) {
   .community {
-    padding: 5rem 0;
+    padding: 4.5rem 0;
   }
 
   .community-container {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
 
   .community-header {
@@ -157,67 +162,47 @@
   }
 
   .community-title {
-    font-size: clamp(2rem, 7vw, 3rem);
+    font-size: clamp(1.9rem, 7.5vw, 2.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
   }
 
   .community-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.45;
   }
 
   .community-content {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    justify-items: center;
   }
 
   .community-visual {
     order: -1;
+    width: 100%;
   }
 
   .community-img {
-    max-width: 300px;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .community-text {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.98rem;
+    line-height: 1.55;
   }
 
-  .community-stats {
-    justify-content: center;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .community {
-    padding: 4rem 0;
-  }
-
-  .community-container {
-    padding: 0 1rem;
-  }
-
-  .community-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .community-content {
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .community-img {
-    max-width: 280px;
-    object-fit: cover;
-    aspect-ratio: 4 / 5;
+  .community-description {
+    width: 100%;
+    max-width: 560px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .community-stats {
@@ -227,6 +212,302 @@
   .stat-number {
     font-size: 1.8rem;
   }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .community {
+    padding: 3.5rem 0;
+    --phone-content-max: 560px;
+    /* Enhanced mobile scrolling */
+    scroll-margin-top: 60px;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .community-container {
+    padding: 0 0.9rem;
+    /* Scroll performance optimization */
+    contain: layout style;
+  }
+
+  /* Ensure mobile stack is visible even before IntersectionObserver kicks in */
+  .community-mobile-stack .reveal { opacity: 1 !important; transform: none !important; }
+
+  /* Mobile Stack Layout - Override default layout */
+  .community-mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Hero Card - Top Section */
+  .community-hero-card-mobile {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 20px;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: none;
+  box-shadow: none;
+  }
+
+  .community-hero-card-mobile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    border-radius: 2px;
+  }
+
+  .community-hero-card-mobile::after { display: none; }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .community-badge-mobile {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  }
+
+  .community-title-mobile { 
+    font-size: clamp(1.7rem, 7.5vw, 2.1rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0 0 0.6rem 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: none;
+    letter-spacing: -0.01em;
+  }
+
+  .community-subtitle-mobile { 
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 400;
+    line-height: 1.45;
+    max-width: 30ch;
+    margin: 0.1rem auto 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Image Card - Middle Section */
+  .community-image-card-mobile {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: none;
+  }
+
+  .community-img-mobile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.1) contrast(1.05) saturate(1.1);
+    transition: transform 0.6s ease;
+  }
+
+  .community-image-overlay-mobile { display: none; }
+
+  .community-overlay-title-mobile {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .community-overlay-text-mobile {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.4;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  /* Content Cards - Bottom Section */
+  .community-cards-grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .community-info-card-mobile {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 1.2rem 1rem;
+  position: relative;
+  backdrop-filter: none;
+  box-shadow: none;
+  }
+
+  .community-card-number-mobile {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 600;
+    letter-spacing: 0.8px;
+  }
+
+  .community-card-title-mobile {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.6rem 0;
+    letter-spacing: -0.01em;
+  }
+
+  .community-text-mobile {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+    font-weight: 300;
+  }
+
+  /* Stats Banner - Final Section */
+  .community-stats-banner-mobile {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: none;
+  box-shadow: none;
+  }
+
+  .community-stats-banner-mobile::before { display: none; }
+
+  .community-stats-title-mobile {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .community-stats-content-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .stat-number-mobile {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+    text-shadow: none;
+    letter-spacing: -0.01em;
+  }
+
+  .stat-divider-mobile { display: none; }
+
+  .stat-label-mobile {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  /* Hide desktop layout elements on mobile */
+  .community-header:not(.community-header-mobile) { 
+    display: none; 
+  }
+
+  .community-content:not(.community-content-mobile) { 
+    display: none; 
+  }
+
+  .community-stats:not(.community-stats-mobile) { 
+    display: none; 
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .community-container { 
+    padding: 0 0.8rem; 
+  }
+  
+  .community-mobile-stack {
+    padding: 0 0.5rem;
+  }
+  
+  .community-hero-card-mobile {
+    padding: 2rem 1.5rem;
+  }
+  
+  .community-title-mobile { 
+    font-size: clamp(1.6rem, 10.5vw, 2.2rem); 
+  }
+  
+  .community-subtitle-mobile { 
+    font-size: 0.9rem; 
+  }
+  
+  .community-text-mobile { 
+    font-size: 0.85rem; 
+    line-height: 1.5; 
+  }
+}
+
+/* Touch device tweaks */
+@media (hover: none) and (pointer: coarse) {
+  .community-stats { padding: 2.2rem 0; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .community-header.reveal,
+  .community-description.reveal,
+  .community-visual.reveal,
+  .community-stats.reveal {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .community::before { display: none; }
 }
 
 /* Scroll animations are now handled via .reveal classes in scroll-animations.css */

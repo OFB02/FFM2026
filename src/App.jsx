@@ -1,12 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../front-page/header.jsx';
 import Hero from '../front-page/hero.jsx';
 import Community from '../front-page/Community.jsx';
+import About from '../front-page/about.jsx';
 import Events from '../front-page/events.jsx';
 import Footer from '../front-page/footer.jsx';
+import ContactModal from '../front-page/ContactModal.jsx';
 import '../front-page/scroll-animations.css';
 
 function App() {
+  const [isContactModalOpen, setContactModalOpen] = useState(false);
+
+  const openContactModal = () => setContactModalOpen(true);
+  const closeContactModal = () => setContactModalOpen(false);
+
   // Initialize a lightweight IntersectionObserver for scroll reveals
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -46,8 +53,10 @@ function App() {
       <Header />
       <Hero />
       <Community />
+      <About />
       <Events />
-      <Footer />
+      <Footer onContactClick={openContactModal} />
+      <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </div>
   );
 }

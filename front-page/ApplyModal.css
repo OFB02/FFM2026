@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
@@ -22,75 +22,74 @@
 }
 
 .modal-content {
-  background: rgba(20, 20, 20, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #000000;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 4px;
   width: 100%;
-  max-width: 600px;
+  max-width: 580px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
   animation: slideIn 0.3s ease-out;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes slideIn {
   from { 
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: translateY(20px);
   }
   to { 
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.5rem;
+  right: 1.5rem;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
   line-height: 1;
-  transition: all 0.3s ease;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  transition: color 0.3s ease;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 300;
 }
 
 .modal-close:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .modal-header {
-  padding: 2.5rem 2.5rem 1.5rem;
+  padding: 3rem 2.5rem 1.5rem;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .modal-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   color: #ffffff;
-  margin: 0 0 0.5rem 0;
-  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .modal-subtitle {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
   margin: 0;
   font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 .modal-form {
@@ -109,30 +108,32 @@
 
 .form-group label {
   display: block;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.9rem;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 400;
   margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 0.875rem 1rem;
   color: #ffffff;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: border-color 0.3s ease;
   font-family: inherit;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .form-group input:focus,
@@ -140,14 +141,12 @@
 .form-group select:focus {
   outline: none;
   border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
 
 .form-group select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1rem;
@@ -155,7 +154,7 @@
 }
 
 .form-group select option {
-  background: #1a1a1a;
+  background: #000000;
   color: #ffffff;
   padding: 0.5rem;
 }
@@ -163,7 +162,7 @@
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .form-actions {
@@ -176,13 +175,14 @@
 .btn-cancel,
 .btn-submit {
   padding: 0.875rem 2rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  min-width: 120px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  min-width: 140px;
 }
 
 .btn-cancel {
@@ -198,16 +198,14 @@
 }
 
 .btn-submit {
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  color: #000000;
-  font-weight: 600;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
 }
 
 .btn-submit:hover {
-  background: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* Mobile Optimizations */
@@ -218,16 +216,17 @@
 
   .modal-content {
     max-width: 100%;
-    border-radius: 12px;
+    border-radius: 4px;
     max-height: 95vh;
   }
 
   .modal-header {
-    padding: 2rem 1.5rem 1rem;
+    padding: 2.5rem 2rem 1.25rem;
   }
 
   .modal-title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
   }
 
   .modal-subtitle {
@@ -235,7 +234,7 @@
   }
 
   .modal-form {
-    padding: 1.5rem;
+    padding: 1.75rem 2rem 2rem;
   }
 
   .form-row {
@@ -264,23 +263,29 @@
     padding: 0.25rem;
   }
 
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+  }
+
   .modal-header {
-    padding: 1.5rem 1rem 1rem;
+    padding: 2rem 1.5rem 1rem;
   }
 
   .modal-form {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .modal-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
   }
 
   .form-group input,
   .form-group textarea,
   .form-group select {
-    padding: 0.75rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
   }
 
   .form-group select {
@@ -292,11 +297,11 @@
 /* Smooth scrolling for modal content */
 .modal-content {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
 
 .modal-content::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .modal-content::-webkit-scrollbar-track {
@@ -304,10 +309,10 @@
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
 }

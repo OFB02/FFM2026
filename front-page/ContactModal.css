@@ -1,0 +1,247 @@
+/* Contact Modal Styles (namespaced to avoid conflicts) */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  animation: cm-fadeIn 0.3s ease-out forwards;
+}
+
+.contact-modal {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 540px;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(20px);
+  animation: cm-slideIn 0.3s ease-out forwards;
+  overflow: hidden;
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.contact-modal-close:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-modal-header {
+  text-align: center;
+  padding: 3rem 2.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-modal-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contact-modal-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.contact-modal-form {
+  padding: 2rem 2.5rem 2.5rem;
+}
+
+.contact-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-modal-form label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-modal-form input,
+.contact-modal-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 300;
+  transition: border-color 0.3s ease;
+}
+
+.contact-modal-form input::placeholder,
+.contact-modal-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-modal-form input:focus,
+.contact-modal-form textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-modal-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.contact-modal-submit {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.contact-modal-submit:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-modal-confirmation {
+  text-align: center;
+  padding: 3rem 2.5rem;
+}
+
+.contact-modal-check {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.contact-modal-confirm-title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.contact-modal-confirm-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+@keyframes cm-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cm-slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-modal-header {
+    padding: 2.5rem 2rem 1.25rem;
+  }
+  
+  .contact-modal-form {
+    padding: 1.75rem 2rem 2rem;
+  }
+  
+  .contact-modal-confirmation {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-modal {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  .contact-modal-close {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .contact-modal-header {
+    padding: 2rem 1.5rem 1rem;
+  }
+  
+  .contact-modal-title {
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .contact-modal-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .contact-modal-form {
+    padding: 1.5rem;
+  }
+  
+  .contact-form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  .contact-modal-form input,
+  .contact-modal-form textarea {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
+  }
+  
+  .contact-modal-confirmation {
+    padding: 2rem 1.5rem;
+  }
+}

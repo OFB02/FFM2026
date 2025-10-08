@@ -1,0 +1,117 @@
+/* Mobile Scroll Enhancements */
+
+/* Global smooth scrolling for mobile */
+@media (max-width: 480px) {
+  html {
+    scroll-behavior: smooth;
+    /* Optimize scroll performance */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  body {
+    /* Prevent horizontal scrolling on mobile */
+    overflow-x: hidden;
+    /* Improve touch scrolling */
+    touch-action: pan-y;
+    /* Better scroll momentum */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Scroll progress indicator for mobile */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--scroll-progress, 0%);
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+    backdrop-filter: blur(2px);
+  }
+
+  /* Optimize all sections for scroll performance */
+  section {
+    contain: layout style;
+    will-change: transform;
+  }
+
+  /* Enhanced scroll snap for better section navigation */
+  .hero,
+  .community,
+  .events {
+    scroll-snap-align: start;
+  }
+
+  /* Better scroll margins for mobile navigation */
+  .community {
+    scroll-margin-top: 60px;
+  }
+
+  .events {
+    scroll-margin-top: 60px;
+  }
+
+  /* Optimize reveal animations for scroll performance */
+  .reveal {
+    will-change: transform, opacity;
+    contain: layout style paint;
+  }
+
+  /* Improve horizontal scrolling galleries */
+  .event-gallery-track {
+    /* Enhanced momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent overscroll bounce */
+    overscroll-behavior-x: contain;
+    /* Better snap alignment */
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+  }
+
+  .event-gallery-card {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  /* Enhanced touch feedback for interactive elements */
+  .btn-hero-primary,
+  .hero-scroll-indicator,
+  .event-gallery-card {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+  }
+
+  /* Smooth transitions for better perceived performance */
+  .community-mobile-stack,
+  .events-mobile-stack {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  .hero-scroll-indicator {
+    animation: none !important;
+  }
+  
+  .reveal {
+    will-change: auto !important;
+  }
+}
+
+/* High contrast mode optimizations */
+@media (prefers-contrast: high) {
+  .hero-scroll-indicator {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+}

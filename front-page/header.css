@@ -41,32 +41,32 @@
 }
 
 .logo-img {
-  height: 28px;
+  height: 36px;
   width: auto;
   display: block;
 }
 
 @media (max-width: 1024px) {
   .logo-img {
-    height: 26px;
+  height: 34px;
   }
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 24px;
+  height: 30px;
   }
 }
 
 @media (max-width: 480px) {
   .logo-img {
-    height: 22px;
+  height: 28px;
   }
 }
 
 @media (max-width: 360px) {
   .logo-img {
-    height: 20px;
+  height: 26px;
   }
 }
 

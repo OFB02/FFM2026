@@ -129,7 +129,7 @@ const ApplyModal = ({ isOpen, onClose }) => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="socials">Social Media Handle</label>
+              <label htmlFor="socials">Instagram</label>
               <input
                 type="text"
                 id="socials"

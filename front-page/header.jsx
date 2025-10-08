@@ -102,7 +102,7 @@ const Header = () => {
             <button className="logo-button" onClick={handleLogoClick} aria-label="Go to top">
               <img
                 className="logo-img"
-                src="/pics/MAIN%20lion%20no%20background.png"
+                src="/pics/FFM%202026%20%284%29.png"
                 alt="FFM Network logo"
               />
             </button>
@@ -110,6 +110,7 @@ const Header = () => {
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <a href="#community" className="nav-link" onClick={(e) => handleNavClick(e, 'community')}>Community</a>
+            <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, 'about')}>About</a>
             <a href="#events" className="nav-link" onClick={(e) => handleNavClick(e, 'events')}>Events</a>
           </nav>
 
@@ -133,7 +134,7 @@ const Header = () => {
         <div className={`reveal-overlay ${isRevealAnimating ? 'animate' : ''}`} aria-hidden="true">
           <div className="pane left"></div>
           <div className="pane right"></div>
-          <img className="reveal-logo" src="/pics/MAIN%20lion%20no%20background.png" alt="FFM Network logo" />
+          <img className="reveal-logo" src="/pics/FFM%202026%20%284%29.png" alt="FFM Network logo" />
         </div>
       )}
       
