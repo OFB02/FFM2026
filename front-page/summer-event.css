@@ -1,0 +1,504 @@
+/* Summer Event Section Styles */
+.summer-event {
+  padding: 8rem 0;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+  contain: layout style paint;
+}
+
+.summer-event::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1) 50%, transparent);
+}
+
+.summer-event-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.summer-event-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.summer-event-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.summer-event-title-highlight {
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.summer-event-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Summer Content */
+.summer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* Summer Info */
+.summer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.summer-badge {
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.summer-badge .badge-text {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summer-name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.summer-location {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  margin: 0;
+  font-style: italic;
+}
+
+.summer-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-weight: 300;
+}
+
+.summer-details {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summer-details .detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summer-details .detail-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summer-details .detail-value {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* Summer Visuals - Teaser Card */
+.summer-visuals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.summer-teaser-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.teaser-gradient {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 4rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.teaser-gradient::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.teaser-content {
+  position: relative;
+  z-index: 1;
+}
+
+.teaser-icon-large {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.teaser-heading {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.teaser-subheading {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin: 0 0 2rem 0;
+}
+
+.teaser-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 auto 2rem;
+}
+
+.teaser-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .summer-event {
+    padding: 6rem 0;
+  }
+
+  .summer-event-header {
+    margin-bottom: 4rem;
+  }
+
+  .summer-content {
+    gap: 4rem;
+  }
+
+  .teaser-gradient {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .summer-event {
+    padding: 4rem 0;
+  }
+
+  .summer-event-container {
+    padding: 0 1.5rem;
+  }
+
+  .summer-event-header {
+    margin-bottom: 3rem;
+  }
+
+  .summer-event-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .summer-event-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .summer-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .summer-info {
+    gap: 1.5rem;
+  }
+
+  .summer-name {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    line-height: 1.1;
+  }
+
+  .summer-location {
+    font-size: 1.1rem;
+  }
+
+  .summer-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .summer-details {
+    padding: 1.2rem 0;
+  }
+
+  .teaser-gradient {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .teaser-heading {
+    font-size: 1.6rem;
+  }
+
+  .teaser-icon-large {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .summer-event { 
+    padding: 3rem 0;
+    scroll-margin-top: 60px;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .summer-event-container { 
+    padding: 0 1rem;
+    contain: layout style;
+  }
+
+  /* Hide desktop structure on phones */
+  .summer-event-header,
+  .summer-content { display: none; }
+
+  /* Ensure mobile reveals are visible immediately */
+  .summer-event-mobile-stack .reveal { opacity: 1 !important; transform: none !important; }
+
+  /* Mobile stack layout */
+  .summer-event-mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Hero card */
+  .summer-hero-mobile {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 16px;
+    padding: 1.6rem 1.2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .summer-badge-mobile {
+    display: inline-block;
+    padding: 0.32rem 0.8rem;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 0.6rem;
+  }
+
+  .summer-title-mobile {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 0.2rem 0;
+    letter-spacing: -0.01em;
+  }
+
+  .summer-subtitle-mobile {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    margin: 0;
+  }
+
+  /* Teaser Card Mobile */
+  .summer-teaser-mobile {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .teaser-gradient-overlay {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem 1.2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .teaser-gradient-overlay::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  .teaser-icon {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: rotate 20s linear infinite;
+    position: relative;
+    z-index: 1;
+  }
+
+  .teaser-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .teaser-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Specs chips */
+  .summer-specs-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .summer-specs-mobile .spec-chip {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 12px;
+    padding: 0.6rem 0.7rem;
+    text-align: center;
+  }
+
+  .summer-specs-mobile .spec-label {
+    display: block;
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.15rem;
+  }
+
+  .summer-specs-mobile .spec-value {
+    font-size: 0.92rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Description card */
+  .summer-description-card-mobile {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 1rem 0.9rem;
+  }
+
+  .summer-card-title-mobile {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0 0 0.3rem 0;
+    font-weight: 600;
+  }
+
+  .summer-text-mobile {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* CTA */
+  .summer-cta-mobile {
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 14px;
+    padding: 0.8rem;
+    text-align: center;
+    background: transparent;
+  }
+
+  .summer-cta-mobile .cta-note {
+    display: inline-block;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+}

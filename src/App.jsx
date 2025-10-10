@@ -4,6 +4,7 @@ import Hero from '../front-page/hero.jsx';
 import Community from '../front-page/Community.jsx';
 import About from '../front-page/about.jsx';
 import Events from '../front-page/events.jsx';
+import SummerEvent from '../front-page/summer-event.jsx';
 import Footer from '../front-page/footer.jsx';
 import ContactModal from '../front-page/ContactModal.jsx';
 import '../front-page/scroll-animations.css';
@@ -55,6 +56,7 @@ function App() {
       <Community />
       <About />
       <Events />
+      <SummerEvent />
       <Footer onContactClick={openContactModal} />
       <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </div>
