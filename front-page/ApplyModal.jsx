@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ApplyModal.css';
+import { db } from '../src/firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 const ApplyModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -13,6 +15,8 @@ const ApplyModal = ({ isOpen, onClose }) => {
     friendsApplying: '',
     attendTrip: ''
   });
+  
+  const [showSuccess, setShowSuccess] = useState(false);
 
   // Close modal on escape key
   useEffect(() => {
@@ -40,24 +44,77 @@ const ApplyModal = ({ isOpen, onClose }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Application submitted:', formData);
-    // You can add your form submission logic here
-    onClose();
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      age: '',
-      socials: '',
-      motivation: '',
-      references: '',
-      friendsApplying: '',
-      attendTrip: ''
-    });
+    try {
+      // Format application data as HTML for email
+      const applicationHTML = `
+        <h3>New Application - FFM</h3>
+        <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Age:</strong> ${formData.age}</p>
+        <p><strong>Instagram:</strong> ${formData.socials || 'Not provided'}</p>
+        <p><strong>Why join:</strong></p>
+        <p>${formData.motivation.replace(/\n/g, '<br>')}</p>
+        <p><strong>References:</strong></p>
+        <p>${formData.references ? formData.references.replace(/\n/g, '<br>') : 'Not provided'}</p>
+        <p><strong>Friends Also Applying:</strong> ${formData.friendsApplying || 'None'}</p>
+        <p><strong>Trip Interest:</strong> ${formData.attendTrip || 'Not specified'}</p>
+      `;
+      
+      const applicationText = `
+New Application - FFM
+
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Age: ${formData.age}
+Instagram: ${formData.socials || 'Not provided'}
+
+Why join:
+${formData.motivation}
+
+References:
+${formData.references || 'Not provided'}
+
+Friends Also Applying: ${formData.friendsApplying || 'None'}
+Trip Interest: ${formData.attendTrip || 'Not specified'}
+      `;
+      
+      // Add email document to Firestore - Trigger Email extension will send it
+      await addDoc(collection(db, 'mail'), {
+        to: ['1855.club.management@gmail.com'],
+        message: {
+          subject: `New Application: ${formData.firstName} ${formData.lastName}`,
+          text: applicationText,
+          html: applicationHTML
+        }
+      });
+      
+      // Show success message
+      setShowSuccess(true);
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        age: '',
+        socials: '',
+        motivation: '',
+        references: '',
+        friendsApplying: '',
+        attendTrip: ''
+      });
+      
+      // Close modal after showing success message
+      setTimeout(() => {
+        setShowSuccess(false);
+        onClose();
+      }, 2500);
+    } catch (err) {
+      console.error('Application send failed', err);
+      alert('Failed to submit application. Please try again later.');
+    }
   };
 
   if (!isOpen) return null;
@@ -68,6 +125,14 @@ const ApplyModal = ({ isOpen, onClose }) => {
         <button className="modal-close" onClick={onClose} aria-label="Close modal">
           ×
         </button>
+        
+        {showSuccess && (
+          <div className="success-popup">
+            <div className="success-checkmark">✓</div>
+            <div className="success-message">Application Submitted Successfully!</div>
+            <div className="success-submessage">We'll review your application and get back to you soon.</div>
+          </div>
+        )}
         
         <div className="modal-header">
           <h2 className="modal-title">Apply to Join</h2>
