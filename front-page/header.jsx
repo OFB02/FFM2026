@@ -111,7 +111,7 @@ const Header = () => {
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <a href="#community" className="nav-link" onClick={(e) => handleNavClick(e, 'community')}>Community</a>
             <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, 'about')}>About</a>
-            <a href="#events" className="nav-link" onClick={(e) => handleNavClick(e, 'events')}>Events</a>
+            <a href="#summer-event" className="nav-link" onClick={(e) => handleNavClick(e, 'summer-event')}>Events</a>
           </nav>
 
           <div className="header-actions">

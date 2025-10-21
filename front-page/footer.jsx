@@ -31,7 +31,7 @@ const Footer = ({ onContactClick }) => {
           <div className="footer-links">
             <a href="#community" className="footer-link" onClick={(e) => handleNavClick(e, 'community')}>Community</a>
             <a href="#about" className="footer-link" onClick={(e) => handleNavClick(e, 'about')} aria-label="Go to About section">About</a>
-            <a href="#events" className="footer-link" onClick={(e) => handleNavClick(e, 'events')}>Events</a>
+            <a href="#summer-event" className="footer-link" onClick={(e) => handleNavClick(e, 'summer-event')}>Events</a>
             <a href="#contact" className="footer-link" onClick={handleContactClick}>Contact us</a>
           </div>
 
